@@ -12,7 +12,7 @@
                 <router-link to="/"><v-btn>Home</v-btn></router-link>
                 <router-link to="/login"><v-btn>Login</v-btn></router-link>
               </div>
-              </v-toolbar>
+            </v-toolbar>
           </v-flex>
         </v-container>
       </v-content>
