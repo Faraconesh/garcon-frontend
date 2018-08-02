@@ -31,9 +31,9 @@
                   <v-icon dark right>send</v-icon>
                 </v-btn>
             </v-flex>
-          </v-layout>
-          </v-container>
-    </v-form>
+            </v-layout>
+            </v-container>
+            </v-form>
             </v-card-text>
     </v-card>
     </v-flex>
