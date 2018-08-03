@@ -11,7 +11,7 @@ const actions = {
     api.login(auth.username, auth.password).then((Response) => {
       window.localStorage.setItem('user_token', Response.data.key)
       commit('SET_TOKEN', Response.data.key)
-      router.push('home')
+      router.push('/')
     }).catch((err) => {
       console.log(err)
     })

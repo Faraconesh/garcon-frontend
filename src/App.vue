@@ -2,21 +2,24 @@
   <div id="app">
     <v-app>
       <v-content>
-        <v-container fluid >
+        <v-container fluid>
           <v-flex>
             <v-toolbar>
               <v-toolbar-side-icon></v-toolbar-side-icon>
-              <v-toolbar-title>Title</v-toolbar-title>
+              <v-toolbar-title>Garçon</v-toolbar-title>
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>Home</v-btn></router-link>
+                <router-link to="/order"><v-btn>Order</v-btn></router-link>
                 <router-link to="/login"><v-btn>Login</v-btn></router-link>
               </div>
             </v-toolbar>
           </v-flex>
+          <v-flex>
+            <router-view/>
+          </v-flex>
         </v-container>
       </v-content>
-      <router-view/>
     </v-app>
   </div>
 </template>
