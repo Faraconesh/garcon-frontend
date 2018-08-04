@@ -1,4 +1,5 @@
 import api from '../../api/mudules/order'
+import router from '../../router'
 
 const state = {
   ordered: false
@@ -9,11 +10,14 @@ const actions = {
     let food = 0
     data.order.map((item, index) => {
       food = item.id
-    })
-    api.submitOrder(food, data.date, data.details).then((Response) => {
-      commit('SET_FOODS', Response.data)
-    }).catch((err) => {
-      console.log(err)
+      api.submitOrder(food, data.date, data.details).then((Response) => {
+        console.log(Response)
+        window.localStorage.removeItem('orders')
+        commit('SET_FOODS', true)
+        router.push('/')
+      }).catch((err) => {
+        console.log(err)
+      })
     })
   }
 }

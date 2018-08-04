@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Order from '../views/Order'
+import OrderList from '../views/Admin/OrderList'
 
 Vue.use(Router)
 
@@ -35,6 +36,16 @@ export default new Router({
         // This route needs auth
         requiresAuth: true,
         title: 'Order'
+      }
+    },
+    {
+      path: '/orderList',
+      name: 'orderList',
+      component: OrderList,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'Order List'
       }
     }
   ]

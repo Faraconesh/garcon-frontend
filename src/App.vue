@@ -10,6 +10,7 @@
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>Home</v-btn></router-link>
+                <router-link to="/orderList"><v-btn>Order List</v-btn></router-link>
                 <router-link to="/order"><v-btn>Order</v-btn></router-link>
                 <router-link to="/login"><v-btn>Login</v-btn></router-link>
               </div>

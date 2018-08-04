@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import authModule from './modules/authModule'
 import foodModule from './modules/foodModule'
 import orderModule from './modules/orderModule'
+import orderListModule from './modules/orderListModule'
+import updateOrderModule from './modules/updateOrderModule'
 
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
@@ -17,7 +19,9 @@ export default new Vuex.Store({
   modules: {
     authModule,
     foodModule,
-    orderModule
+    orderModule,
+    orderListModule,
+    updateOrderModule
   },
   strict: debug
 })
