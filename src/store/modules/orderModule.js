@@ -11,7 +11,6 @@ const actions = {
     data.order.map((item, index) => {
       food = item.id
       api.submitOrder(food, data.date, data.details).then((Response) => {
-        console.log(Response)
         window.localStorage.removeItem('orders')
         commit('SET_FOODS', true)
         router.push('/')
