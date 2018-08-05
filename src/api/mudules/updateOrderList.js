@@ -1,10 +1,10 @@
-import axios from 'axios'
+import { cngAxios } from '../axios'
 import { API_ROOT } from '../../config'
 
 export default {
-  getOrderList (id) {
-    return axios.put(API_ROOT + `/orderDetails/${id}/`, {
-        status: true
+  deliverOrder (id) {
+    return cngAxios.put(API_ROOT + `/orderDetails/${id}/`, {
+      status: true
     })
   }
 }

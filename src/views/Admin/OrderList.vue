@@ -16,7 +16,7 @@
                   <v-flex xs4>{{order.food[0]}}</v-flex>
                   <v-flex xs4>{{order.user}}</v-flex>
                   <v-flex xs4>{{order.details}}</v-flex>
-                  <i @click="deliveredOrder(order.id)"><v-icon v-if="!order.status">done</v-icon></i>
+                  <i v-if="!order.status" @click="deliverOrder(order.id)"><v-icon>done</v-icon></i>
                   </v-layout>
                 </li>
               </transition-group>
@@ -44,9 +44,9 @@ export default {
   beforeMount: function () {
     this.$store.dispatch('getOrderList')
   },
-  method: {
-    deliveredOrder (id) {
-      this.$store.dispatch('getOrderList', id)
+  methods: {
+    deliverOrder (id) {
+      this.$store.dispatch('deliverOrder', id)
     }
   }
 }
@@ -70,7 +70,7 @@ export default {
   cursor:pointer;
   }
   .alert {
-    background-color: rgb(241, 12, 138);
+    background-color: #39c402;
   }
   #foodname {
     align-content: center;

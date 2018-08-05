@@ -1,5 +1,5 @@
-import api from '../../api/mudules/order'
-import router from '../../router'
+import api from '../../api/mudules/updateOrderList'
+// import router from '../../router'
 
 const state = {
   delivered: false
@@ -10,7 +10,7 @@ const actions = {
     if (id) {
       api.deliverOrder(id).then((Response) => {
         commit('SET_DELIVERED', true)
-        router.push('/')
+        location.reload()
       }).catch((err) => {
         console.log(err)
       })

@@ -1,8 +1,8 @@
-import axios from 'axios'
+import { cngAxios } from '../axios'
 import { API_ROOT } from '../../config'
 
 export default {
   getOrderList () {
-    return axios.get(API_ROOT + '/orderList/')
+    return cngAxios.get(API_ROOT + '/orderList/')
   }
 }
