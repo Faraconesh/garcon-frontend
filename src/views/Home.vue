@@ -40,15 +40,21 @@
             <h3 class="headline mb-0">{{food.name}}</h3>
           </div>
           </v-card-title>
-          <v-card-text>
-            {{food.price}}
-            {{food.details}}
-          </v-card-text>
           <v-card-actions>
             <v-btn @click="addToOrderListMethod(food.id)" color="green">Add to order
               <v-icon dark right>add_shopping_cart</v-icon>
             </v-btn>
-        </v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn icon @click="show = !show">
+              <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+          <v-slide-y-transition>
+            <v-card-text v-show="show">
+              {{food.price}}
+              {{food.details}}
+            </v-card-text>
+          </v-slide-y-transition>
         </v-card>
       </v-flex>
   </v-layout>
@@ -62,7 +68,8 @@ export default {
   data () {
     return {
       hasOrderList: false,
-      orders: []
+      orders: [],
+      show: false
     }
   },
   computed: {
