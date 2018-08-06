@@ -30,12 +30,20 @@ export default {}
 </script>
 
 <style>
+@font-face {
+    font-family: 'Vazir';
+    src: url('./assets/fonts/Vazir.ttf') format('truetype'),
+        url("./assets/fonts/Vazir.woff") format('woff');
+}
 html,
 body {
   height: 100%;
 }
+* {
+  font-family: 'Vazir', Helvetica, Arial, sans-serif;;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
