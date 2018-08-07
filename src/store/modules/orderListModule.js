@@ -1,4 +1,4 @@
-import api from '../../api/mudules/orderList'
+import api from '../../api/modules/orderList'
 
 const state = {
   orderList: []

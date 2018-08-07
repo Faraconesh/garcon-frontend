@@ -1,4 +1,4 @@
-import api from '../../api/mudules/food'
+import api from '../../api/modules/food'
 
 const state = {
   foods: []

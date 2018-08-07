@@ -1,4 +1,4 @@
-import api from '../../api/mudules/updateOrderList'
+import api from '../../api/modules/updateOrderList'
 // import router from '../../router'
 
 const state = {

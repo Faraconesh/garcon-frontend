@@ -1,4 +1,4 @@
-import api from '../../api/mudules/auth'
+import api from '../../api/modules/auth'
 import router from '../../router'
 
 const state = {
