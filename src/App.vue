@@ -11,8 +11,8 @@
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>Home</v-btn></router-link>
                 <router-link to="/orderList"><v-btn>Order List</v-btn></router-link>
-                <router-link to="/order"><v-btn>Order</v-btn></router-link>
-                <router-link to="/login"><v-btn>Login</v-btn></router-link>
+                <router-link v-if="!isAuthenticated" to="/login"><v-btn>Login</v-btn></router-link>
+                <v-btn v-else>Hello {{username}}</v-btn>
               </div>
             </v-toolbar>
           </v-flex>
@@ -26,7 +26,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    isAuthenticated: true
+  }),
+  computed: {
+    username () {
+      return window.localStorage.getItem('user_name')
+    }
+  }
+}
 </script>
 
 <style>
