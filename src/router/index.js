@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import Logout from '../views/Logout.vue'
 import Order from '../views/Order'
 import OrderList from '../views/Admin/OrderList'
 
@@ -46,6 +47,16 @@ export default new Router({
         // This route needs auth
         requiresAuth: true,
         title: 'Order List'
+      }
+    },
+    {
+      path: '/logout',
+      name: 'Logout',
+      component: Logout,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'Logout'
       }
     }
   ]

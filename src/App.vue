@@ -11,8 +11,9 @@
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>Home</v-btn></router-link>
                 <router-link to="/orderList"><v-btn>Order List</v-btn></router-link>
-                <router-link v-if="!isAuthenticated" to="/login"><v-btn>Login</v-btn></router-link>
-                <v-btn v-else>Hello {{username}}</v-btn>
+                <router-link to="/login"><v-btn>Login</v-btn></router-link>
+                <router-link to="/logout"><v-btn>logout</v-btn></router-link>
+                <v-btn>Hello {{username}}</v-btn>
               </div>
             </v-toolbar>
           </v-flex>
