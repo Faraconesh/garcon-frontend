@@ -87,7 +87,7 @@ export default {
   methods: {
     addToOrderListMethod (index) {
       this.hasOrderList = true
-      let food = this.$store.getters.getFoods[index - 1]
+      let food = this.$store.getters.getFoods[index]
       this.orders.push(food)
       window.localStorage.setItem('orders', JSON.stringify(this.orders))
     },

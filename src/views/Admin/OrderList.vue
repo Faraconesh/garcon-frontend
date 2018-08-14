@@ -13,9 +13,10 @@
               <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(order, index) in orders" :key="index" v-bind:class="{ alert: order.status }" transition="slide-y-reverse-transition">
                   <v-layout>
-                  <v-flex xs4>{{order.details}}</v-flex>
-                  <v-flex xs4>{{order.food[0]}}</v-flex>
-                  <v-flex xs4>{{order.user}}</v-flex>
+                  <v-flex xs3>{{order.orderDateTime}}</v-flex>
+                  <v-flex xs3>{{order.details}}</v-flex>
+                  <v-flex xs3>{{order.food[0]}}</v-flex>
+                  <v-flex xs3>{{order.user}}</v-flex>
                   <i v-if="!order.status" @click="deliverOrder(order.id)"><v-icon>done</v-icon></i>
                   <i v-if="order.status"><v-icon>offline_pin</v-icon></i>
                   </v-layout>
