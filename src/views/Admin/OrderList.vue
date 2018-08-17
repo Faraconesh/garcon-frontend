@@ -9,6 +9,16 @@
           </div>
           </v-card-title>
           <v-card-text>
+          <ul>
+            <li>
+            <v-layout>
+            <v-flex xs3>{{ $t("orderlist.OrderDateTime") }}</v-flex>
+            <v-flex xs3>{{ $t("orderlist.Details") }}</v-flex>
+            <v-flex xs3>{{ $t("orderlist.FoodName") }}</v-flex>
+            <v-flex xs3>{{ $t("orderlist.Username") }}</v-flex>
+            </v-layout>
+            </li>
+            </ul>
             <ul>
               <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(order, index) in orders" :key="index" v-bind:class="{ alert: order.status }" transition="slide-y-reverse-transition">

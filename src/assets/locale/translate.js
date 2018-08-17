@@ -17,7 +17,10 @@ export const messages = {
       AddToOrder: 'Add to order'
     },
     orderlist: {
-      OrderList: 'Order list'
+      OrderDateTime: 'Order Date',
+      Details: 'Details',
+      FoodName: 'Food Name',
+      Username: 'Customer'
     },
     addfood: {
       Title: 'Add new food',
@@ -62,7 +65,7 @@ export const messages = {
       Login: 'ورودی',
       Logout: 'خروج',
       Hello: 'سلام',
-      AddFood: 'افزدون غذای جدید',
+      AddFood: 'افزودن غذای جدید',
       Signup: 'ایجاد حساب کاربری'
     },
     home: {
@@ -72,7 +75,11 @@ export const messages = {
       AddToOrder: 'افزودن به سبد سفارش'
     },
     orderlist: {
-      OrderList: 'لیست سفارشات'
+      OrderList: 'لیست سفارشات',
+      OrderDateTime: 'زمان سفارش',
+      Details: 'توضیحات',
+      FoodName: 'نام غذا',
+      Username: 'نام سفارش‌دهنده'
     },
     addfood: {
       Title: 'افزودن غذای جدید',
