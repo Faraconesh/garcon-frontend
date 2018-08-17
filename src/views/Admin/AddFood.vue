@@ -77,7 +77,7 @@ export default {
     valid: false,
     name: '',
     price: '',
-    detilas: '',
+    details: '',
     imageName: '',
     imageUrl: '',
     rules: {
