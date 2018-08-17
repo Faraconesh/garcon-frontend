@@ -74,10 +74,6 @@ export default {
   name: 'AddFood',
   data: () => ({
     food: { name: undefined, price: undefined, picture: undefined, details: undefined },
-    valid: false,
-    name: '',
-    price: '',
-    details: '',
     imageName: '',
     imageUrl: '',
     rules: {

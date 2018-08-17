@@ -1,9 +1,9 @@
-import { cngAxios } from '../axios'
+import axios from 'axios'
 import { API_ROOT } from '../../config'
 
 export default {
   login (username, password) {
-    return cngAxios.post(API_ROOT + '/accounts/login/', {
+    return axios.post(API_ROOT + '/accounts/login/', {
       username: username,
       password: password
     })
