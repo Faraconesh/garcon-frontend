@@ -2,11 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueI18n from 'vue-i18n'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import { messages } from './assets/locale/translate'
 
 Vue.config.productionTip = false
+Vue.use(VueI18n)
 
 // Router Guard
-
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     // this route requires auth, check if logged in
@@ -42,8 +47,21 @@ if (window.localStorage) {
   }
 }
 
+const i18n = new VueI18n({
+  locale: 'fa', // set locale
+  messages // set locale messages
+})
+
+Vue.use(Vuetify, {
+  rtl: true,
+  lang: {
+    t: (key, ...params) => i18n.t(key, params)
+  }
+})
+
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

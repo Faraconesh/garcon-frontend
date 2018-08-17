@@ -1,16 +1,14 @@
 <template>
 <div>
-    logout
+    {{ $t("logout.Logout") }}
 </div>
 </template>
 
 <script>
-import router from '../router'
 export default {
   name: 'order',
   beforeMount: function () {
-    localStorage.clear()
-    router.push('/login')
+    this.$store.dispatch('logout')
   }
 }
 </script>

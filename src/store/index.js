@@ -5,12 +5,9 @@ import foodModule from './modules/foodModule'
 import orderModule from './modules/orderModule'
 import orderListModule from './modules/orderListModule'
 import updateOrderModule from './modules/updateOrderModule'
+import logoutModule from './modules/logoutModule'
+import addFoodModule from './modules/addFoodModule'
 
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
-import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
-
-Vue.use(Vuetify)
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -19,9 +16,11 @@ export default new Vuex.Store({
   modules: {
     authModule,
     foodModule,
+    addFoodModule,
     orderModule,
     orderListModule,
-    updateOrderModule
+    updateOrderModule,
+    logoutModule
   },
   strict: debug
 })

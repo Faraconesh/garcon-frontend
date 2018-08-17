@@ -5,7 +5,7 @@
       <v-card color="white">
         <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">Order list</h3>
+          <h3 class="headline mb-0">{{ $t("order.OrderList") }}</h3>
         </div>
         </v-card-title>
         <v-card-text>
@@ -33,7 +33,7 @@
           <v-flex>
             <v-textarea
               name='details'
-              label='Details'
+              :label='$t("order.Details")'
               v-model="details"
             ></v-textarea>
           </v-flex>
@@ -53,7 +53,7 @@
               <v-text-field
                 slot="activator"
                 v-model="date"
-                label="Picker without buttons"
+                :label='$t("order.PickDate")'
                 prepend-icon="event"
                 readonly
               ></v-text-field>
@@ -61,7 +61,7 @@
             </v-menu>
           </v-flex>
           <v-flex >
-              <v-btn class="white--text" color="blue" large @click="submitOrderMethod">Submit
+              <v-btn class="white--text" color="blue" large @click="submitOrderMethod">{{ $t("order.SubmitOrder") }}
                 <v-icon dark right>done</v-icon>
               </v-btn>
           </v-flex>

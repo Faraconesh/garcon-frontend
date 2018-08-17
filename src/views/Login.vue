@@ -4,7 +4,7 @@
       <v-flex xs8>
         <v-card color="white">
           <v-card-text>
-            Welcom to Garçon
+            <h2>{{ $t("login.Welcome") }}</h2>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -20,7 +20,7 @@
                   <v-flex>
                   <v-text-field
                     name='username'
-                    label='Username'
+                    :label='$t("login.Username")'
                     v-model="auth.username"
                     :rules="nameRules"
                     required
@@ -33,12 +33,12 @@
                       :rules="[rules.required]"
                       :type="showPassword ? 'text' : 'password'"
                       name='password'
-                      label='Password'
+                    :label='$t("login.Password")'
                       @click:append="showPassword = !showPassword">
                     </v-text-field>
                   </v-flex>
                   <v-flex >
-                    <v-btn class="white--text" color="blue" large @click="loginMethod">Login
+                    <v-btn class="white--text" color="blue" large @click="loginMethod">{{ $t("login.Login") }}
                       <v-icon dark right>send</v-icon>
                     </v-btn>
                   </v-flex>

@@ -5,7 +5,7 @@
         <v-card color="white">
           <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">Order list</h3>
+            <h3 class="headline mb-0">{{ $t("home.OrderList") }}</h3>
           </div>
           </v-card-title>
           <v-card-text>
@@ -20,12 +20,16 @@
               </ul>
           </v-card-text>
           <v-card-actions>
-            <v-btn @click="submitOrder" dark color="blue">Submit order
-              <v-icon dark right>restaurant_menu</v-icon>
-            </v-btn>
-            <v-btn @click="clearOrder" dark color="red">Clear order
-              <v-icon dark right>cancel</v-icon>
-            </v-btn>
+            <v-flex>
+              <v-btn @click="submitOrder" dark color="blue">{{ $t("home.SubmitOrder") }}
+                <v-icon dark right>restaurant_menu</v-icon>
+              </v-btn>
+            </v-flex>
+            <v-flex>
+              <v-btn @click="clearOrder" dark color="red">{{ $t("home.ClearOrder") }}
+                <v-icon dark right>cancel</v-icon>
+              </v-btn>
+            </v-flex>
         </v-card-actions>
         </v-card>
       </v-flex>
@@ -35,24 +39,28 @@
       <v-flex v-for="(food, index) in foods" :key="index" xs3 ma-1>
         <v-card color="white">
           <v-card-media :src="food.picture" height="300px"></v-card-media>
-          <v-card-title primary-title>
-          <div>
-            <h3 class="headline mb-0">{{food.name}}</h3>
-          </div>
+          <v-card-title primary-title class="headline mb-0 justify-center">
+            <h5>{{food.name}}</h5>
           </v-card-title>
           <v-card-actions>
-            <v-btn @click="addToOrderListMethod(food.id)" color="green">Add to order
+            <v-btn @click="addToOrderListMethod(food.id)" color="green">{{ $t("home.AddToOrder") }}
               <v-icon dark right>add_shopping_cart</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn icon @click="show = !show">
-              <v-icon>{{ show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+            <v-btn icon @click="showHandle(index)">
+              <v-icon>{{ shows[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
             </v-btn>
           </v-card-actions>
           <v-slide-y-transition>
-            <v-card-text v-show="show">
-              {{food.price}}
-              {{food.details}}
+            <v-card-text v-show="shows[index]">
+              <v-layout>
+                <v-flex>
+                  {{food.price}}
+                </v-flex>
+                <v-flex>
+                  {{food.details}}
+                </v-flex>
+              </v-layout>
             </v-card-text>
           </v-slide-y-transition>
         </v-card>
@@ -69,7 +77,7 @@ export default {
     return {
       hasOrderList: false,
       orders: [],
-      show: false
+      shows: []
     }
   },
   computed: {
@@ -87,7 +95,7 @@ export default {
   methods: {
     addToOrderListMethod (index) {
       this.hasOrderList = true
-      let food = this.$store.getters.getFoods[index]
+      let food = this.$store.getters.getFoods[index - 1]
       this.orders.push(food)
       window.localStorage.setItem('orders', JSON.stringify(this.orders))
     },
@@ -107,6 +115,12 @@ export default {
       if (JSON.parse(window.localStorage.getItem('orders')) && JSON.parse(window.localStorage.getItem('orders')).length > 0) {
         router.push('/order')
       }
+    },
+    showHandle (index) {
+      if (!this.shows[index]) {
+        this.shows[index] = false
+      }
+      this.shows.splice(index, 1, !this.shows[index])
     }
   }
 }

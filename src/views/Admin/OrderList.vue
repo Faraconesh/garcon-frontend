@@ -5,7 +5,7 @@
         <v-card color="white" >
           <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">Order list</h3>
+            <h3 class="headline mb-0">{{ $t("orderlist.OrderList") }}</h3>
           </div>
           </v-card-title>
           <v-card-text>

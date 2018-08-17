@@ -6,14 +6,15 @@
           <v-flex>
             <v-toolbar>
               <v-toolbar-side-icon></v-toolbar-side-icon>
-              <v-toolbar-title>Garçon</v-toolbar-title>
+              <v-toolbar-title>{{ $t("toolBar.Title") }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
-                <router-link to="/"><v-btn>Home</v-btn></router-link>
-                <router-link to="/orderList"><v-btn>Order List</v-btn></router-link>
-                <router-link to="/login"><v-btn>Login</v-btn></router-link>
-                <router-link to="/logout"><v-btn>logout</v-btn></router-link>
-                <v-btn>Hello {{username}}</v-btn>
+                <router-link to="/"><v-btn>{{ $t("toolBar.Home") }}</v-btn></router-link>
+                <router-link to="/orderList"><v-btn>{{ $t("toolBar.OrderList") }}</v-btn></router-link>
+                <router-link to="/addfood"><v-btn>{{ $t("toolBar.AddFood") }}</v-btn></router-link>
+                <router-link v-if="!isAuthenticated" to="/login"><v-btn>{{ $t("toolBar.Login") }}</v-btn></router-link>
+                <router-link v-else to="/logout"><v-btn>{{ $t("toolBar.Logout") }}</v-btn></router-link>
+                <v-btn>{{ $t("toolBar.Hello") }} {{username}}</v-btn>
               </div>
             </v-toolbar>
           </v-flex>
@@ -29,7 +30,7 @@
 <script>
 export default {
   data: () => ({
-    isAuthenticated: true
+    isAuthenticated: window.localStorage.getItem('user_token')
   }),
   computed: {
     username () {
@@ -42,8 +43,7 @@ export default {
 <style>
 @font-face {
     font-family: 'Vazir';
-    src: url('./assets/fonts/Vazir.ttf') format('truetype'),
-        url("./assets/fonts/Vazir.woff") format('woff');
+    src: url("./assets/fonts/Vazir.woff") format('woff');
 }
 html,
 body {
@@ -61,7 +61,7 @@ body {
   overflow: auto;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/bg-01.jpg');
+  background-image: url('./assets/images/bg-01.jpg');
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
