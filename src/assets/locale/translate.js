@@ -1,7 +1,8 @@
 export const messages = {
-  en: {
+  'en-US': {
     toolBar: {
       Title: 'Garçon',
+      IsInYourService: 'Is in your service',
       Home: 'Home',
       OrderList: 'Order List',
       Login: 'Login',
@@ -57,12 +58,13 @@ export const messages = {
       signup: 'Signup'
     }
   },
-  fa: {
+  'fa-IR': {
     toolBar: {
       Title: 'گارسون',
+      IsInYourService: 'در خدمت شماست',
       Home: 'خانه',
       OrderList: 'لیست سفارشات',
-      Login: 'ورودی',
+      Login: 'ورود',
       Logout: 'خروج',
       Hello: 'سلام',
       AddFood: 'افزودن غذای جدید',

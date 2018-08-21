@@ -7,7 +7,7 @@ export default {
     data.append('food', food)
     data.append('details', details)
     data.append('submitDateTime', submitDateTime)
-    return cngAxios.post(API_ROOT + '/orderCreation/', data, {
+    return cngAxios.post(API_ROOT + '/orderCreation', data, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

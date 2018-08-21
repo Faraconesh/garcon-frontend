@@ -8,7 +8,7 @@ export default {
     data.append('picture', picture)
     data.append('price', price)
     data.append('detials', details)
-    return cngAxios.post(API_ROOT + '/foodCreation/', data, {
+    return cngAxios.post(API_ROOT + '/foodCreation', data, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

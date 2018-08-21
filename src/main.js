@@ -7,6 +7,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { messages } from './assets/locale/translate'
+import { numberFormats } from './assets/locale/numbers'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
@@ -48,7 +49,8 @@ if (window.localStorage) {
 }
 
 const i18n = new VueI18n({
-  locale: 'fa', // set locale
+  numberFormats,
+  locale: 'fa-IR', // set locale
   messages // set locale messages
 })
 

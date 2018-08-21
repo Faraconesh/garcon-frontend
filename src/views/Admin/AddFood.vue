@@ -13,7 +13,7 @@
       <v-flex xs6 order-xs5>
         <v-card color="white">
           <v-card-text>
-            <v-form v-model="valid" lazy-validation>
+            <v-form lazy-validation>
               <v-container fluid>
                 <v-layout wrap column>
                   <v-flex>

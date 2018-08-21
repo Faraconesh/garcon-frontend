@@ -6,8 +6,8 @@ const state = {
 
 const actions = {
   // This action will get an auth array which contains username and password
-  getFoodList ({ commit }) {
-    api.getFoodList().then((Response) => {
+  getFoodList ({ commit }, orderBy) {
+    api.getFoodList(orderBy).then((Response) => {
       commit('SET_FOODS', Response.data)
     }).catch((err) => {
       console.log(err)

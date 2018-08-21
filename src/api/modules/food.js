@@ -1,8 +1,12 @@
 import { cngAxios } from '../axios'
-import { API_ROOT } from '../../config'
+import { API_FOODLIST } from '../../config'
 
 export default {
-  getFoodList () {
-    return cngAxios.get(API_ROOT + '/foodList/')
+  getFoodList (orderBy) {
+    if (orderBy) {
+      return cngAxios.get(API_FOODLIST + orderBy)
+    } else {
+      return cngAxios.get(API_FOODLIST + '?ordering=-userWeight,customWeight')
+    }
   }
 }

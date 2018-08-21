@@ -24,7 +24,7 @@
                 <li v-for="(order, index) in orders" :key="index" v-bind:class="{ alert: order.status }" transition="slide-y-reverse-transition">
                   <v-layout>
                   <v-flex xs3>{{order.orderDateTime}}</v-flex>
-                  <v-flex xs3>{{order.details}}</v-flex>
+                  <v-flex xs3><span style="white-space: pre;">{{order.details}}</span></v-flex>
                   <v-flex xs3>{{order.food[0]}}</v-flex>
                   <v-flex xs3>{{order.user}}</v-flex>
                   <i v-if="!order.status" @click="deliverOrder(order.id)"><v-icon>done</v-icon></i>

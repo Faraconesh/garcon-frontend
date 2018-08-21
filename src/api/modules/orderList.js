@@ -3,6 +3,6 @@ import { API_ROOT } from '../../config'
 
 export default {
   getOrderList () {
-    return cngAxios.get(API_ROOT + '/orderList/')
+    return cngAxios.get(API_ROOT + '/orderList')
   }
 }

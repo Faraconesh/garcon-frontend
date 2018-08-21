@@ -45,7 +45,7 @@
               <h5>{{food.name}}</h5>
             </v-flex>
             <v-flex>
-              <h5>{{food.price}}</h5>
+              <h5>{{ $n(food.price, 'currency') }}</h5>
             </v-flex>
             </v-layout>
           </v-card-title>
@@ -62,7 +62,7 @@
             <v-card-text v-show="shows[index]">
               <v-layout>
                 <v-flex>
-                  {{food.details}}
+                  <span style="white-space: pre;">{{food.details}}</span>
                 </v-flex>
               </v-layout>
             </v-card-text>

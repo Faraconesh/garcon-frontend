@@ -8,6 +8,7 @@ const actions = {
     commit('CLEAR_TOKEN', '')
     window.localStorage.removeItem('user_name')
     commit('CLEAR_USERNAME', '')
+    location.reload()
     router.push('/login')
   }
 }
