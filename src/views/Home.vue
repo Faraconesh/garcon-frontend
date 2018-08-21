@@ -40,10 +40,17 @@
         <v-card color="white">
           <v-card-media :src="food.picture" height="300px"></v-card-media>
           <v-card-title primary-title class="headline mb-0 justify-center">
-            <h5>{{food.name}}</h5>
+            <v-layout column>
+            <v-flex>
+              <h5>{{food.name}}</h5>
+            </v-flex>
+            <v-flex>
+              <h5>{{food.price}}</h5>
+            </v-flex>
+            </v-layout>
           </v-card-title>
           <v-card-actions>
-            <v-btn @click="addToOrderListMethod(food.id)" color="green">{{ $t("home.AddToOrder") }}
+            <v-btn @click="addToOrderListMethod(index+1)" color="green">{{ $t("home.AddToOrder") }}
               <v-icon dark right>add_shopping_cart</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
@@ -54,9 +61,6 @@
           <v-slide-y-transition>
             <v-card-text v-show="shows[index]">
               <v-layout>
-                <v-flex>
-                  {{food.price}}
-                </v-flex>
                 <v-flex>
                   {{food.details}}
                 </v-flex>
