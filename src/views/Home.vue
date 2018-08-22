@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-layout v-if="hasOrderList" transition="slide-y-transition" wrap justify-center>
+  <v-layout v-if="hasOrderList" wrap justify-center>
       <v-flex xs6 ma-3>
         <v-card color="white">
           <v-card-title primary-title>
@@ -12,9 +12,17 @@
             <ul>
               <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(food, index) in orders" :key="index" transition="slide-y-reverse-transition">
-                  {{food.name}}
-                  <strong>{{food.price}}</strong>
-                  <i @click="removeFood(index)"><v-icon>remove_shopping_cart</v-icon></i>
+                  <v-layout>
+                    <v-flex>
+                    <i @click="removeFood(index)"><v-icon>remove_shopping_cart</v-icon></i>
+                    </v-flex>
+                    <v-flex>
+                      {{food.name}}
+                    </v-flex>
+                    <v-flex>
+                      <strong>{{ $n(food.price, 'currency') }}</strong>
+                    </v-flex>
+                  </v-layout>
                   </li>
               </transition-group>
               </ul>
@@ -47,6 +55,11 @@
             <v-flex>
               <h5>{{ $n(food.price, 'currency') }}</h5>
             </v-flex>
+            <v-flex>
+              <span id="hashtag" v-for="(category, index) in food.categories" :key="index">
+                #{{category}}
+                </span>
+            </v-flex>
             </v-layout>
           </v-card-title>
           <v-card-actions>
@@ -60,7 +73,10 @@
           </v-card-actions>
           <v-slide-y-transition>
             <v-card-text v-show="shows[index]">
-              <v-layout>
+              <v-layout column>
+                <v-flex>
+                  <h3>{{food.restaurant}}</h3>
+                </v-flex>
                 <v-flex>
                   <span style="white-space: pre;">{{food.details}}</span>
                 </v-flex>
@@ -149,6 +165,10 @@ export default {
   }
   strong {
   float:left;
+  }
+  span#hashtag {
+    font-size: 17px;
+    color: blue;
   }
   @keyframes bounce-in {
   0% {

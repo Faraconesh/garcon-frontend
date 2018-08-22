@@ -12,9 +12,17 @@
           <ul>
             <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
               <li v-for="(food, index) in orders" :key="index" transition="slide-y-reverse-transition">
-                {{food.name}}
-                <strong>{{food.price}}</strong>
-                <i @click="removeFood(index)"><v-icon>remove_shopping_cart</v-icon></i>
+                <v-layout>
+                    <v-flex>
+                    <i @click="removeFood(index)"><v-icon>remove_shopping_cart</v-icon></i>
+                    </v-flex>
+                    <v-flex>
+                      {{food.name}}
+                    </v-flex>
+                    <v-flex>
+                      <strong>{{ $n(food.price, 'currency') }}</strong>
+                    </v-flex>
+                  </v-layout>
                 </li>
             </transition-group>
             </ul>
@@ -22,7 +30,6 @@
       </v-card>
     </v-flex>
   </v-layout>
-
   <v-layout wrap justify-center fill-height>
     <v-flex xs4 order-xs5>
       <v-card color="white">
