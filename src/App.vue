@@ -11,9 +11,10 @@
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>{{ $t("toolBar.Home") }}</v-btn></router-link>
                 <router-link to="/orderList"><v-btn>{{ $t("toolBar.OrderList") }}</v-btn></router-link>
+                <router-link v-if="isAuthenticated" to="/myorder"><v-btn>{{ $t("toolBar.MyOrderList") }}</v-btn></router-link>
                 <router-link v-if="!isAuthenticated" to="/login"><v-btn>{{ $t("toolBar.Login") }}</v-btn></router-link>
                 <router-link v-else to="/logout"><v-btn>{{ $t("toolBar.Logout") }}</v-btn></router-link>
-                <router-link v-if="isAuthenticated" to="/profile"><v-btn>{{ $t("toolBar.Hello") }} {{username}}</v-btn></router-link>
+                <router-link v-if="isAuthenticated" to="/myorder"><v-btn>{{ $t("toolBar.Hello") }} {{username}}</v-btn></router-link>
               </div>
             </v-toolbar>
           </v-flex>

@@ -6,6 +6,7 @@ import Logout from '../views/Logout.vue'
 import Order from '../views/Order'
 import OrderList from '../views/OrderList'
 import AddFood from '../views/Admin/AddFood'
+import MyOrder from '../views/User/MyOrder'
 
 Vue.use(Router)
 
@@ -58,6 +59,16 @@ export default new Router({
         // This route needs auth
         requiresAuth: true,
         title: 'Add Food'
+      }
+    },
+    {
+      path: '/myorder',
+      name: 'My Order',
+      component: MyOrder,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'My Order'
       }
     },
     {

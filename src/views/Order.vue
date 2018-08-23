@@ -20,7 +20,7 @@
                       {{food.name}}
                     </v-flex>
                     <v-flex>
-                      <strong>{{ $n(food.price, 'currency') }}</strong>
+                      <strong>{{ $n(food.price) }} {{$t('orderlist.Currency')}} </strong>
                     </v-flex>
                   </v-layout>
                 </li>
@@ -31,7 +31,7 @@
     </v-flex>
   </v-layout>
   <v-layout wrap justify-center fill-height>
-    <v-flex xs4 order-xs5>
+    <v-flex xs6 order-xs5>
       <v-card color="white">
         <v-card-text>
           <v-form v-model="valid" lazy-validation>
@@ -57,6 +57,7 @@
               full-width
               min-width="290px"
             >
+            <!-- Make date persian in v-model -->
               <v-text-field
                 slot="activator"
                 v-model="date"
@@ -67,11 +68,18 @@
               <v-date-picker v-model="date" locale="fa" @input="$refs.menu2.save(date)"></v-date-picker>
             </v-menu>
           </v-flex>
-          <v-flex >
-              <v-btn class="white--text" color="blue" large @click="submitOrderMethod">{{ $t("order.SubmitOrder") }}
-                <v-icon dark right>done</v-icon>
-              </v-btn>
-          </v-flex>
+          <v-layout row>
+            <v-flex >
+                <v-btn class="white--text" color="blue" large @click="submitOrderMethod">{{ $t("order.SubmitOrder") }}
+                  <v-icon dark right>done</v-icon>
+                </v-btn>
+            </v-flex>
+            <v-flex >
+                <v-btn class="white--text" color="red" large @click="cancelOrderMethod">{{ $t("order.SubmitOrder") }}
+                  <v-icon dark right>cancel</v-icon>
+                </v-btn>
+            </v-flex>
+          </v-layout>
           </v-layout>
           </v-container>
           </v-form>
@@ -136,10 +144,11 @@ export default {
       const [year, month, day] = date.split('-')
       return `${month}/${day}/${year}`
     },
-    parseDate (date) {
-      if (!date) return null
-      const [month, day, year] = date.split('/')
-      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+    cancelOrderMethod () {
+      this.orders = []
+      window.localStorage.removeItem('orders')
+      this.hasOrderList = false
+      router.push('/')
     }
   }
 }

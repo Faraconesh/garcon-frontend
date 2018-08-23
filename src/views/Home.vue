@@ -20,7 +20,7 @@
                       {{food.name}}
                     </v-flex>
                     <v-flex>
-                      <strong>{{ $n(food.price, 'currency') }}</strong>
+                      <strong>{{ $n(food.price) }} {{$t('orderlist.Currency')}}</strong>
                     </v-flex>
                   </v-layout>
                   </li>
@@ -53,7 +53,7 @@
               <h5>{{food.name}}</h5>
             </v-flex>
             <v-flex>
-              <h5>{{ $n(food.price, 'currency') }}</h5>
+              <h5>{{ $n(food.price) }} {{$t('home.Currency')}} </h5>
             </v-flex>
             <v-flex>
               <span id="hashtag" v-for="(category, index) in food.categories" :key="index">

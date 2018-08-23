@@ -8,6 +8,7 @@ import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { messages } from './assets/locale/translate'
 import { numberFormats } from './assets/locale/numbers'
+import { dateTimeFormats } from './assets/locale/datetime'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
@@ -50,6 +51,7 @@ if (window.localStorage) {
 
 const i18n = new VueI18n({
   numberFormats,
+  dateTimeFormats,
   locale: 'fa-IR', // set locale
   messages // set locale messages
 })

@@ -5,20 +5,18 @@
         <v-card color="white" >
           <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">{{ $t("orderlist.OrderList") }}</h3>
+            <h3 class="headline mb-0">{{ $t("myorderlist.OrderList") }}</h3>
           </div>
           </v-card-title>
           <v-card-text>
           <ul>
             <li>
             <v-layout>
-            <v-flex xs1>{{ $t("orderlist.Price") }}</v-flex>
-            <v-flex xs2>{{ $t("orderlist.OrderDateTime") }}</v-flex>
-            <v-flex xs3>{{ $t("orderlist.Details") }}</v-flex>
-            <v-flex xs2>{{ $t("orderlist.RestaurantName") }}</v-flex>
-            <v-flex xs2>{{ $t("orderlist.FoodName") }}</v-flex>
-            <v-flex xs2>{{ $t("orderlist.Username") }}</v-flex>
-            <i><v-icon>done</v-icon></i>
+            <v-flex xs2>{{ $t("myorderlist.Price") }}</v-flex>
+            <v-flex xs2>{{ $t("myorderlist.OrderDateTime") }}</v-flex>
+            <v-flex xs3>{{ $t("myorderlist.Details") }}</v-flex>
+            <v-flex xs2>{{ $t("myorderlist.RestaurantName") }}</v-flex>
+            <v-flex xs3>{{ $t("myorderlist.FoodName") }}</v-flex>
             </v-layout>
             </li>
             </ul>
@@ -26,14 +24,12 @@
               <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(order, index) in orders" :key="index" v-bind:class="{ alert: order.status }" transition="slide-y-reverse-transition">
                   <v-layout>
-                  <v-flex xs1>{{ $n(order.food[0].price) }} {{$t('orderlist.Currency')}} </v-flex>
+                  <v-flex xs2>{{ $n(order.food[0].price) }} {{$t('orderlist.Currency')}} </v-flex>
                   <v-flex xs2>{{ $d(new Date(order.orderDateTime), 'short', 'fa-IR') }}</v-flex>
                   <v-flex xs3><span style="white-space: pre;">{{order.details}}</span></v-flex>
                   <v-flex xs2>{{order.food[0].restaurant}}</v-flex>
-                  <v-flex xs2>{{order.food[0].name}}</v-flex>
-                  <v-flex xs2>{{order.user}}</v-flex>
-                  <i v-if="!order.status" @click="deliverOrder(order.id, true)"><v-icon>done</v-icon></i>
-                  <i v-if="order.status" @click="deliverOrder(order.id, false)"><v-icon>offline_pin</v-icon></i>
+                  <v-flex xs3>{{order.food[0].name}}</v-flex>
+                  <i v-if="!order.status" @click="removeOrder(order.id)"><v-icon>cancel</v-icon></i>
                   </v-layout>
                 </li>
               </transition-group>
@@ -47,7 +43,7 @@
 
 <script>
 export default {
-  name: 'orderList',
+  name: 'MyOrderList',
   data () {
     return {
       orderList: []
@@ -55,15 +51,15 @@ export default {
   },
   computed: {
     orders () {
-      return this.$store.getters.getOrders
+      return this.$store.getters.getMyOrderList
     }
   },
   beforeMount: function () {
-    this.$store.dispatch('getOrderList')
+    this.$store.dispatch('getMyOrderList')
   },
   methods: {
-    deliverOrder (id, status) {
-      this.$store.dispatch('deliverOrder', {id, status})
+    removeOrder (id) {
+      this.$store.dispatch('removeMyOrderList', id)
     }
   }
 }

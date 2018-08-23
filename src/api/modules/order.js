@@ -6,7 +6,9 @@ export default {
     var data = new FormData()
     data.append('food', food)
     data.append('details', details)
-    data.append('orderDateTime', orderDateTime)
+    if (orderDateTime) {
+      data.append('orderDateTime', orderDateTime)
+    }
     return cngAxios.post(API_ROOT + '/orderCreation', data, {
       headers: {
         'Content-Type': 'multipart/form-data'

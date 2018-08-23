@@ -5,6 +5,7 @@ export const messages = {
       IsInYourService: 'Is in your service',
       Home: 'Home',
       OrderList: 'Order List',
+      MyOrderList: 'My Order List',
       Login: 'Login',
       Logout: 'Logout',
       Hello: 'Hello',
@@ -12,12 +13,24 @@ export const messages = {
       Signup: 'Signup'
     },
     home: {
+      Currency: '$',
       OrderList: 'Your order list',
       SubmitOrder: 'Submit order',
       ClearOrder: 'Clear order',
       AddToOrder: 'Add to order'
     },
     orderlist: {
+      Price: 'Price',
+      Currency: '$',
+      OrderDateTime: 'Order Date',
+      Details: 'Details',
+      FoodName: 'Food Name',
+      RestaurantName: 'Restaurant Name',
+      Username: 'Customer'
+    },
+    myorderlist: {
+      Price: 'Price',
+      Currency: '$',
       OrderDateTime: 'Order Date',
       Details: 'Details',
       FoodName: 'Food Name',
@@ -65,6 +78,7 @@ export const messages = {
       IsInYourService: 'در خدمت شماست',
       Home: 'خانه',
       OrderList: 'لیست سفارشات',
+      MyOrderList: 'لیست سفارشات من',
       Login: 'ورود',
       Logout: 'خروج',
       Hello: 'سلام',
@@ -72,14 +86,27 @@ export const messages = {
       Signup: 'ایجاد حساب کاربری'
     },
     home: {
+      Currency: 'تومان',
       OrderList: 'لیست سفارشات شما',
       SubmitOrder: 'ثبت سفارش',
       ClearOrder: 'حذف سفارش',
       AddToOrder: 'افزودن به سبد سفارش'
     },
     orderlist: {
+      Price: 'قیمت',
+      Currency: 'تومان',
       OrderList: 'لیست سفارشات',
-      OrderDateTime: 'زمان سفارش',
+      OrderDateTime: 'تاریخ سفارش',
+      Details: 'توضیحات',
+      FoodName: 'نام غذا',
+      RestaurantName: 'نام رستوران',
+      Username: 'نام سفارش‌دهنده'
+    },
+    myorderlist: {
+      Price: 'قیمت',
+      Currency: 'تومان',
+      OrderList: 'لیست سفارشات',
+      OrderDateTime: 'تاریخ سفارش',
       Details: 'توضیحات',
       FoodName: 'نام غذا',
       RestaurantName: 'نام رستوران',

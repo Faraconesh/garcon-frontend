@@ -14,7 +14,7 @@
       <v-flex xs6 order-xs5>
         <v-card color="white">
           <v-card-text>
-            <v-form v-model="valid" lazy-validation>
+            <v-form v-model="valid" lazy-validation  @keyup.enter.native="loginMethod">
               <v-container fluid>
                 <v-layout wrap column>
                   <v-flex>
