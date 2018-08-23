@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Order from '../views/Order'
-import OrderList from '../views/Admin/OrderList'
+import OrderList from '../views/OrderList'
 import AddFood from '../views/Admin/AddFood'
 
 Vue.use(Router)

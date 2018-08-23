@@ -14,8 +14,8 @@ const actions = {
       commit('SET_TOKEN', Response.data.key)
       window.localStorage.setItem('user_name', auth.username)
       commit('SET_USERNAME', auth.username)
-      location.reload()
       router.push('/')
+      location.reload()
     }).catch((err) => {
       console.log(err)
     })

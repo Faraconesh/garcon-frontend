@@ -21,6 +21,7 @@ export const messages = {
       OrderDateTime: 'Order Date',
       Details: 'Details',
       FoodName: 'Food Name',
+      RestaurantName: 'Restaurant Name',
       Username: 'Customer'
     },
     addfood: {
@@ -81,6 +82,7 @@ export const messages = {
       OrderDateTime: 'زمان سفارش',
       Details: 'توضیحات',
       FoodName: 'نام غذا',
+      RestaurantName: 'نام رستوران',
       Username: 'نام سفارش‌دهنده'
     },
     addfood: {
