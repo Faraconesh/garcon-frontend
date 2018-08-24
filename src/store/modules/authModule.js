@@ -3,7 +3,8 @@ import router from '../../router'
 
 const state = {
   token: '',
-  username: ''
+  username: '',
+  emailsent: false
 }
 
 const actions = {
@@ -19,6 +20,14 @@ const actions = {
     }).catch((err) => {
       console.log(err)
     })
+  },
+  changepassword ({ commit }, email) {
+    api.changepassword(email).then((Response) => {
+      commit('SET_EMAILSENT', true)
+      router.push('/emailsent')
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 }
 
@@ -29,6 +38,9 @@ const mutations = {
   },
   SET_USERNAME (state, username) {
     state.username = username
+  },
+  SET_EMAILSENT (state, emailsent) {
+    state.emailsent = emailsent
   }
 }
 
@@ -39,6 +51,9 @@ const getters = {
   },
   getUserName: state => {
     return state.username
+  },
+  getEmailSent: state => {
+    return state.emailsent
   }
 }
 

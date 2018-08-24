@@ -19,6 +19,10 @@ export const messages = {
       ClearOrder: 'Clear order',
       AddToOrder: 'Add to order'
     },
+    restaurantMain: {
+      ShowMenu: 'Show menu',
+      NumberOfOrder: 'Number of order'
+    },
     orderlist: {
       Price: 'Price',
       Currency: '$',
@@ -50,6 +54,15 @@ export const messages = {
       Username: 'Username',
       Password: 'Password',
       Login: 'Login'
+    },
+    changepassword: {
+      Title: 'Change password form',
+      Email: 'Email',
+      SentMail: 'Send email'
+    },
+    emailsent: {
+      Content: 'Email sent, Please check your inbox/spam.',
+      GoToHome: 'Got to home'
     },
     logout: {
       Logout: 'Logout'
@@ -92,6 +105,10 @@ export const messages = {
       ClearOrder: 'حذف سفارش',
       AddToOrder: 'افزودن به سبد سفارش'
     },
+    restaurantMain: {
+      ShowMenu: 'نمایش منو',
+      NumberOfOrder: 'تعداد سفارشات'
+    },
     orderlist: {
       Price: 'قیمت',
       Currency: 'تومان',
@@ -125,6 +142,16 @@ export const messages = {
       Username: 'نام کاربری',
       Password: 'رمز عبور',
       Login: 'ورود'
+    },
+    changepassword: {
+      Title: 'تغییر گذرواژه',
+      Email: 'ایمیل',
+      SentMail: 'ارسال پیوند تغییر گذرواژه'
+    },
+    emailsent: {
+      Content: `ایمیل حاوی پیوند تغییر گذرواژه ارسال گردید.
+      لطفا صندوق ایمیل و اسپم را بررسی نمایید.`,
+      GoToHome: 'رفتن به خانه'
     },
     order: {
       OrderList: 'لیست سفارشات شما',

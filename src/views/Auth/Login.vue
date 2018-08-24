@@ -19,6 +19,7 @@
                 <v-layout wrap column>
                   <v-flex>
                   <v-text-field
+                    class="left-input-direction"
                     name='username'
                     :label='$t("login.Username")'
                     v-model="auth.username"
@@ -28,12 +29,13 @@
                   </v-flex>
                   <v-flex >
                     <v-text-field
-                      v-model="auth.password"
-                      :append-icon="showPassword ? 'visibility_off' : 'visibility'"
-                      :rules="[rules.required]"
-                      :type="showPassword ? 'text' : 'password'"
+                      class="left-input-direction"
                       name='password'
-                    :label='$t("login.Password")'
+                      :label='$t("login.Password")'
+                      v-model="auth.password"
+                      :rules="[rules.required]"
+                      :append-icon="showPassword ? 'visibility_off' : 'visibility'"
+                      :type="showPassword ? 'text' : 'password'"
                       @click:append="showPassword = !showPassword">
                     </v-text-field>
                   </v-flex>
@@ -75,3 +77,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.left-input-direction {
+  direction: ltr;
+}
+</style>

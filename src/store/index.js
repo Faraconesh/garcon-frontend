@@ -8,6 +8,7 @@ import updateOrderModule from './modules/updateOrderModule'
 import logoutModule from './modules/logoutModule'
 import addFoodModule from './modules/addFoodModule'
 import myOrderListModule from './modules/myOrderListModule'
+import restaurantListModule from './modules/Restaurant/restaurantMainModule'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
   modules: {
     authModule,
     foodModule,
+    restaurantListModule,
     addFoodModule,
     orderModule,
     orderListModule,

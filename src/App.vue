@@ -6,7 +6,7 @@
           <v-flex>
             <v-toolbar>
               <v-toolbar-side-icon></v-toolbar-side-icon>
-              <v-toolbar-title>{{ $t("toolBar.Title") }} {{ $t("toolBar.IsInYourService") }}</v-toolbar-title>
+              <v-toolbar-title class="mr-2">{{ $t("toolBar.Title") }} {{ $t("toolBar.IsInYourService") }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>{{ $t("toolBar.Home") }}</v-btn></router-link>
@@ -59,8 +59,6 @@ body {
   text-align: center;
   color: #2c3e50;
   overflow: auto;
-  width: 100%;
-  height: 100%;
   background-image: url('./assets/images/bg-01.jpg');
   background-repeat: repeat;
   background-size: cover;
