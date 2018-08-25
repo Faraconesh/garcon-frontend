@@ -66,6 +66,9 @@
             <v-flex>
               <span>{{ $t('home.NumberOfOrder') }} {{ $n(food.userWeight)}}</span>
             </v-flex>
+            <v-flex>
+              <h3>{{food.restaurant}}</h3>
+            </v-flex>
           </v-card-text>
           <v-card-actions>
             <v-layout>
@@ -76,7 +79,7 @@
               </v-flex>
               <v-spacer></v-spacer>
               <v-flex xs6 md3>
-            <v-btn icon @click="showHandle(index)">
+            <v-btn v-if="food.details" icon @click="showHandle(index)">
               <v-icon>{{ shows[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
             </v-btn>
               </v-flex>
@@ -85,9 +88,6 @@
           <v-slide-y-transition>
             <v-card-text v-show="shows[index]">
               <v-layout column>
-                <v-flex>
-                  <h3>{{food.restaurant}}</h3>
-                </v-flex>
                 <v-flex>
                   <span style="white-space: pre;">{{food.details}}</span>
                 </v-flex>
