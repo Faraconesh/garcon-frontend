@@ -7,7 +7,7 @@
           <v-card>
             <v-card-media :src="GoToHome" height="500px">
             </v-card-media>
-            <v-card-text class="justify-center" style="white-space: pre-wrap;">
+            <v-card-text class="justify-center">
             {{ $t("passwordchanged.Content") }}
             </v-card-text>
             <v-card-actions class="justify-center">
