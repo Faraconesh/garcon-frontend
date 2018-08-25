@@ -4,6 +4,7 @@ export const messages = {
       Title: 'Garçon',
       IsInYourService: 'Is in your service',
       Home: 'Home',
+      ChangePassword: 'Change password',
       Restaurant: 'Restaurant',
       Category: 'Category',
       OrderList: 'Order List',
@@ -104,6 +105,7 @@ export const messages = {
     toolBar: {
       Title: 'گارسون',
       IsInYourService: 'در خدمت شماست',
+      ChangePassword: 'تغییر گذرواژه',
       Home: 'خانه',
       Restaurant: 'رستوران‌ها',
       Category: 'انواع غذا',

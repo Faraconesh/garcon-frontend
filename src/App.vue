@@ -5,7 +5,19 @@
         <v-container fluid>
           <v-flex>
             <v-toolbar>
-              <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-menu bottom left offset-y>
+                  <v-btn
+                    slot="activator"
+                    icon
+                  >
+                    <v-icon>more_vert</v-icon>
+                  </v-btn>
+                  <v-list>
+                    <v-list-tile to='/changepassword'>
+                      <v-list-tile-title>{{ $t("toolBar.ChangePassword") }}</v-list-tile-title>
+                    </v-list-tile>
+                  </v-list>
+                </v-menu>
               <v-toolbar-title class="mr-2">{{username}} {{ $t("toolBar.Title") }} {{ $t("toolBar.IsInYourService") }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
