@@ -59,6 +59,17 @@ export const messages = {
       Login: 'Login'
     },
     changepassword: {
+      Title: 'Change password',
+      OldPassword: 'Old password',
+      NewPassword1: 'New password',
+      NewPassword2: 'Confirm new password',
+      ChangePassword: 'Change password'
+    },
+    passwordchanged: {
+      Content: 'Password changed!',
+      GoToHome: 'Go to home'
+    },
+    forgetpassword: {
       Title: 'Change password form',
       Email: 'Email',
       SentMail: 'Send email'
@@ -153,7 +164,18 @@ export const messages = {
       Password: 'رمز عبور',
       Login: 'ورود'
     },
+    passwordchanged: {
+      Content: 'گذرواژه با موفقیت تغییر یافت',
+      GoToHome: 'بازگشت به خانه'
+    },
     changepassword: {
+      Title: 'تغییر گذرواژه',
+      OldPassword: 'گذرواژه قبلی',
+      NewPassword1: 'گذرواژه جدید',
+      NewPassword2: 'تکرار گذرواژه جدید',
+      ChangePassword: 'تغییر گذرواژه'
+    },
+    forgetpassword: {
       Title: 'تغییر گذرواژه',
       Email: 'ایمیل',
       SentMail: 'ارسال پیوند تغییر گذرواژه'

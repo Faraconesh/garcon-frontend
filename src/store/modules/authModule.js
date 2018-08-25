@@ -4,6 +4,7 @@ import router from '../../router'
 const state = {
   token: '',
   username: '',
+  passwordchanged: false,
   emailsent: false
 }
 
@@ -21,10 +22,10 @@ const actions = {
       console.log(err)
     })
   },
-  changepassword ({ commit }, email) {
-    api.changepassword(email).then((Response) => {
-      commit('SET_EMAILSENT', true)
-      router.push('/emailsent')
+  changepassword ({ commit }, auth) {
+    api.changepassword(auth.newpassword1, auth.newpassword2).then((Response) => {
+      commit('SET_PASSWORDCHANGED', true)
+      router.push('/passwordchanged')
     }).catch((err) => {
       console.log(err)
     })
@@ -39,6 +40,9 @@ const mutations = {
   SET_USERNAME (state, username) {
     state.username = username
   },
+  SET_PASSWORDCHANGED (state, passwordchanged) {
+    state.passwordchanged = passwordchanged
+  },
   SET_EMAILSENT (state, emailsent) {
     state.emailsent = emailsent
   }
@@ -51,6 +55,9 @@ const getters = {
   },
   getUserName: state => {
     return state.username
+  },
+  getPasswordChanged: state => {
+    return state.passwordchanged
   },
   getEmailSent: state => {
     return state.emailsent

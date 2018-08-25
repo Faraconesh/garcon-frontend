@@ -6,7 +6,7 @@
           <v-flex>
             <v-toolbar>
               <v-toolbar-side-icon></v-toolbar-side-icon>
-              <v-toolbar-title class="mr-2">{{ $t("toolBar.Title") }} {{ $t("toolBar.IsInYourService") }}</v-toolbar-title>
+              <v-toolbar-title class="mr-2">{{username}} {{ $t("toolBar.Title") }} {{ $t("toolBar.IsInYourService") }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <div class="hidden-sm-and-down">
                 <router-link to="/"><v-btn>{{ $t("toolBar.Home") }}</v-btn></router-link>
@@ -16,7 +16,6 @@
                 <router-link v-if="isAuthenticated" to="/myorder"><v-btn>{{ $t("toolBar.MyOrderList") }}</v-btn></router-link>
                 <router-link v-if="!isAuthenticated" to="/login"><v-btn>{{ $t("toolBar.Login") }}</v-btn></router-link>
                 <router-link v-else to="/logout"><v-btn>{{ $t("toolBar.Logout") }}</v-btn></router-link>
-                <router-link v-if="isAuthenticated" to="/myorder"><v-btn>{{ $t("toolBar.Hello") }} {{username}}</v-btn></router-link>
               </div>
             </v-toolbar>
           </v-flex>

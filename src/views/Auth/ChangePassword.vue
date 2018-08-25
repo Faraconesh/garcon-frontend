@@ -19,14 +19,31 @@
                   <v-flex>
                   <v-text-field
                     class="left-input-direction"
-                    name='email'
-                    :label='$t("changepassword.Email")'
-                    v-model="email"
+                    name='newpassword1'
+                    :label='$t("changepassword.NewPassword1")'
+                    :rules="[rules.required]"
+                    v-model="auth.newpassword1"
+                    :append-icon="showNewPassword1 ? 'visibility_off' : 'visibility'"
+                    :type="showNewPassword1 ? 'text' : 'password'"
+                    @click:append="showNewPassword1 = !showNewPassword1"
                     required
                   ></v-text-field>
                   </v-flex>
                   <v-flex>
-                  <v-btn class="white--text" color="blue" large @click="changePasswordMethod">{{ $t("changepassword.SentMail") }}
+                  <v-text-field
+                    class="left-input-direction"
+                    name='newpassword2'
+                    :label='$t("changepassword.NewPassword2")'
+                    :rules="[rules.required]"
+                    v-model="auth.newpassword2"
+                    :append-icon="showNewPassword2 ? 'visibility_off' : 'visibility'"
+                    :type="showNewPassword2 ? 'text' : 'password'"
+                    @click:append="showNewPassword2 = !showNewPassword2"
+                    required
+                  ></v-text-field>
+                  </v-flex>
+                  <v-flex>
+                  <v-btn class="white--text" color="blue" large @click="changePasswordMethod">{{ $t("changepassword.ChangePassword") }}
                   </v-btn>
                   </v-flex>
                 </v-layout>
@@ -43,12 +60,17 @@
 export default {
   name: 'ChangePassword',
   data: () => ({
-    email: undefined,
-    valid: false
+    auth: {newpassword1: undefined, newpassword2: undefined},
+    valid: false,
+    showNewPassword1: false,
+    showNewPassword2: false,
+    rules: {
+      required: value => !!value || '!الزامی'
+    }
   }),
   methods: {
     changePasswordMethod () {
-      this.$store.dispatch('changepassword', this.email)
+      this.$store.dispatch('changepassword', this.auth)
     }
   }
 }

@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Auth/Login.vue'
-import ChangePassword from '../views/Auth/ChangePassword.vue'
+import ChangePassword from '../views/Auth/ChangePassword'
+import PasswordChanged from '../views/Auth/PasswordChanged'
+import ForgetPassword from '../views/Auth/ForgetPassword.vue'
 import EmailSent from '../views/Auth/EmailSent'
 import Logout from '../views/Auth/Logout.vue'
 import Order from '../views/Order'
@@ -78,11 +80,11 @@ export default new Router({
       }
     },
     {
-      path: '/changepassword',
-      name: 'changepassword',
-      component: ChangePassword,
+      path: '/forgetpassword',
+      name: 'ForgetPassword',
+      component: ForgetPassword,
       meta: {
-        title: 'Change Password'
+        title: 'Forget Password'
       }
     },
     {
@@ -91,6 +93,22 @@ export default new Router({
       component: EmailSent,
       meta: {
         title: 'Email Sent'
+      }
+    },
+    {
+      path: '/passwordchanged',
+      name: 'PasswordChanged',
+      component: PasswordChanged,
+      meta: {
+        title: 'Password Changed'
+      }
+    },
+    {
+      path: '/changepassword',
+      name: 'ChangePassword',
+      component: ChangePassword,
+      meta: {
+        title: 'Change Password'
       }
     },
     {
