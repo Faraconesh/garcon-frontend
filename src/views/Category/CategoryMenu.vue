@@ -44,7 +44,7 @@
   </v-layout>
 
   <v-layout wrap justify-center>
-      <v-flex v-for="(food, index) in foods" :key="index" xs3 ma-1>
+      <v-flex v-for="(food, index) in foods" :key="index" v-if="food.categories.includes(categoryName)" xs3 ma-1>
         <v-card color="white">
           <v-card-media :src="food.picture" height="300px"></v-card-media>
           <v-card-title primary-title class="headline mb-0 justify-center">
@@ -62,11 +62,6 @@
             </v-flex>
             </v-layout>
           </v-card-title>
-          <v-card-text>
-            <v-flex>
-              <span>{{ $t('home.NumberOfOrder') }} {{ $n(food.userWeight)}}</span>
-            </v-flex>
-          </v-card-text>
           <v-card-actions>
             <v-layout>
               <v-flex xs6 md3>
@@ -101,11 +96,12 @@
 </template>
 
 <script>
-import router from '../router'
+import router from '../../router'
 export default {
-  name: 'home',
+  name: 'CategoryMenu',
   data () {
     return {
+      categoryName: undefined,
       hasOrderList: false,
       orders: [],
       shows: []
@@ -117,6 +113,7 @@ export default {
     }
   },
   beforeMount: function () {
+    this.categoryName = this.$router.currentRoute.query.categoryName
     this.$store.dispatch('getFoodList')
     if (JSON.parse(window.localStorage.getItem('orders')) && JSON.parse(window.localStorage.getItem('orders')).length > 0) {
       this.orders = JSON.parse(window.localStorage.getItem('orders'))

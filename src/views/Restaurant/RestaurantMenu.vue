@@ -44,7 +44,7 @@
   </v-layout>
 
   <v-layout wrap justify-center>
-      <v-flex v-for="(food, index) in foods" :key="index" xs3 ma-1>
+      <v-flex v-for="(food, index) in foods" :key="index" v-if="food.restaurant==restaurantName" xs3 ma-1>
         <v-card color="white">
           <v-card-media :src="food.picture" height="300px"></v-card-media>
           <v-card-title primary-title class="headline mb-0 justify-center">
@@ -101,11 +101,12 @@
 </template>
 
 <script>
-import router from '../router'
+import router from '../../router'
 export default {
-  name: 'home',
+  name: 'Restaurant Menu',
   data () {
     return {
+      restaurantName: undefined,
       hasOrderList: false,
       orders: [],
       shows: []
@@ -117,6 +118,7 @@ export default {
     }
   },
   beforeMount: function () {
+    this.restaurantName = this.$router.currentRoute.query.restaurantName
     this.$store.dispatch('getFoodList')
     if (JSON.parse(window.localStorage.getItem('orders')) && JSON.parse(window.localStorage.getItem('orders')).length > 0) {
       this.orders = JSON.parse(window.localStorage.getItem('orders'))

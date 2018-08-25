@@ -1,4 +1,4 @@
-import api from '../../../api/modules/Restaurants/restaurantsMain'
+import api from '../../../api/modules/Restaurant/restaurantMain'
 
 const state = {
   restaurants: []

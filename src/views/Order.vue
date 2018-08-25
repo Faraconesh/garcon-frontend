@@ -75,7 +75,7 @@
                 </v-btn>
             </v-flex>
             <v-flex >
-                <v-btn class="white--text" color="red" large @click="cancelOrderMethod">{{ $t("order.SubmitOrder") }}
+                <v-btn class="white--text" color="red" large @click="cancelOrderMethod">{{ $t("order.CancelOrder") }}
                   <v-icon dark right>cancel</v-icon>
                 </v-btn>
             </v-flex>

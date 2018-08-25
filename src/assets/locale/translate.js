@@ -4,6 +4,8 @@ export const messages = {
       Title: 'Garçon',
       IsInYourService: 'Is in your service',
       Home: 'Home',
+      Restaurant: 'Restaurant',
+      Category: 'Category',
       OrderList: 'Order List',
       MyOrderList: 'My Order List',
       Login: 'Login',
@@ -14,6 +16,7 @@ export const messages = {
     },
     home: {
       Currency: '$',
+      NumberOfOrder: 'Number of ordered: ',
       OrderList: 'Your order list',
       SubmitOrder: 'Submit order',
       ClearOrder: 'Clear order',
@@ -70,6 +73,7 @@ export const messages = {
     order: {
       OrderList: 'Your order list',
       Details: 'Order details',
+      CancelOrder: 'Cancel order',
       PickDate: 'Order date',
       SubmitOrder: 'Submit order'
     },
@@ -90,6 +94,8 @@ export const messages = {
       Title: 'گارسون',
       IsInYourService: 'در خدمت شماست',
       Home: 'خانه',
+      Restaurant: 'رستوران‌ها',
+      Category: 'انواع غذا',
       OrderList: 'لیست سفارشات',
       MyOrderList: 'لیست سفارشات من',
       Login: 'ورود',
@@ -101,6 +107,7 @@ export const messages = {
     home: {
       Currency: 'تومان',
       OrderList: 'لیست سفارشات شما',
+      NumberOfOrder: 'تعداد سفارش داده شده: ',
       SubmitOrder: 'ثبت سفارش',
       ClearOrder: 'حذف سفارش',
       AddToOrder: 'افزودن به سبد سفارش'
@@ -108,6 +115,9 @@ export const messages = {
     restaurantMain: {
       ShowMenu: 'نمایش منو',
       NumberOfOrder: 'تعداد سفارشات'
+    },
+    categoryMain: {
+      ShowMenu: 'نمایش منو'
     },
     orderlist: {
       Price: 'قیمت',
@@ -156,6 +166,7 @@ export const messages = {
     order: {
       OrderList: 'لیست سفارشات شما',
       Details: 'جزئیات سفارش',
+      CancelOrder: 'لغو سفارش',
       PickDate: 'زمان سفارش',
       SubmitOrder: 'ثبت نهایی سفارش'
     },

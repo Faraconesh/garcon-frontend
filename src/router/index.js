@@ -9,7 +9,10 @@ import Order from '../views/Order'
 import OrderList from '../views/OrderList'
 import AddFood from '../views/Admin/AddFood'
 import MyOrder from '../views/User/MyOrder'
-import RestaurantMain from '../views/Restaurant/Main'
+import RestaurantMain from '../views/Restaurant/RestaurantMain'
+import RestaurantMenu from '../views/Restaurant/RestaurantMenu'
+import CategoryMain from '../views/Category/CategoryMain'
+import CategoryMenu from '../views/Category/CategoryMenu'
 
 Vue.use(Router)
 
@@ -34,6 +37,36 @@ export default new Router({
         // This route needs auth
         requiresAuth: true,
         title: 'Restaurant'
+      }
+    },
+    {
+      path: '/restaurantmenu',
+      name: 'RestaurantMenu',
+      component: RestaurantMenu,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'Restaurant Menu'
+      }
+    },
+    {
+      path: '/category',
+      name: 'Category',
+      component: CategoryMain,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'Category'
+      }
+    },
+    {
+      path: '/categorymenu',
+      name: 'CategoryMenu',
+      component: CategoryMenu,
+      meta: {
+        // This route needs auth
+        requiresAuth: true,
+        title: 'Category Menu'
       }
     },
     {
