@@ -1,6 +1,14 @@
 <template>
 <div>
   <v-layout v-if="hasOrderList" wrap justify-center>
+    <v-snackbar
+    v-model="snackbar"
+    color="success"
+    timeout=3000
+    top
+    >
+      {{ $t("home.AddSuccessfully") }}
+    </v-snackbar>
       <v-flex xs6 ma-3>
         <v-card color="white">
           <v-card-title primary-title>
@@ -106,6 +114,7 @@ export default {
   name: 'CategoryMenu',
   data () {
     return {
+      snackbar: false,
       categoryName: undefined,
       hasOrderList: false,
       orders: [],
@@ -131,6 +140,7 @@ export default {
       let food = this.$store.getters.getFoods[index - 1]
       this.orders.push(food)
       window.localStorage.setItem('orders', JSON.stringify(this.orders))
+      this.snackbar = true
     },
     clearOrder () {
       this.orders = []
