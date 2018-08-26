@@ -19,6 +19,7 @@ export const messages = {
       Currency: '$',
       NumberOfOrder: 'Number of ordered: ',
       OrderList: 'Your order list',
+      AddSuccessfully: 'Added to order list successfully',
       SubmitOrder: 'Submit order',
       ClearOrder: 'Clear order',
       AddToOrder: 'Add to order'
@@ -120,6 +121,7 @@ export const messages = {
     home: {
       Currency: 'تومان',
       OrderList: 'لیست سفارشات شما',
+      AddSuccessfully: 'با موفقیت به لیست سفارشات اضافه شد!',
       NumberOfOrder: 'تعداد سفارش داده شده: ',
       SubmitOrder: 'ثبت سفارش',
       ClearOrder: 'حذف سفارش',

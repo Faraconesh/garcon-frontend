@@ -1,6 +1,14 @@
 <template>
 <div>
   <v-layout v-if="hasOrderList" wrap justify-center>
+    <v-snackbar
+    v-model="snackbar"
+    color="success"
+    timeout="3000"
+    top
+    >
+      {{ $t("home.AddSuccessfully") }}
+    </v-snackbar>
       <v-flex xs6 ma-3>
         <v-card color="white">
           <v-card-title primary-title>
@@ -29,7 +37,7 @@
           </v-card-text>
           <v-card-actions>
             <v-flex>
-              <v-btn @click="submitOrder" dark color="blue">{{ $t("home.SubmitOrder") }}
+              <v-btn @click="submitOrder" dark color="blue" >{{ $t("home.SubmitOrder") }}
                 <v-icon dark right>restaurant_menu</v-icon>
               </v-btn>
             </v-flex>
@@ -106,6 +114,7 @@ export default {
   name: 'home',
   data () {
     return {
+      snackbar: false,
       hasOrderList: false,
       orders: [],
       shows: []
@@ -129,6 +138,7 @@ export default {
       let food = this.$store.getters.getFoods[index - 1]
       this.orders.push(food)
       window.localStorage.setItem('orders', JSON.stringify(this.orders))
+      this.snackbar = true
     },
     clearOrder () {
       this.orders = []
