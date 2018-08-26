@@ -12,11 +12,11 @@
           <ul>
             <li>
             <v-layout>
-            <v-flex xs2>{{ $t("myorderlist.Price") }}</v-flex>
-            <v-flex xs2>{{ $t("myorderlist.OrderDateTime") }}</v-flex>
-            <v-flex xs3>{{ $t("myorderlist.Details") }}</v-flex>
-            <v-flex xs2>{{ $t("myorderlist.RestaurantName") }}</v-flex>
             <v-flex xs3>{{ $t("myorderlist.FoodName") }}</v-flex>
+            <v-flex xs2>{{ $t("myorderlist.RestaurantName") }}</v-flex>
+            <v-flex xs3>{{ $t("myorderlist.Details") }}</v-flex>
+            <v-flex xs2>{{ $t("myorderlist.OrderDateTime") }}</v-flex>
+            <v-flex xs2>{{ $t("myorderlist.Price") }}</v-flex>
             </v-layout>
             </li>
             </ul>
@@ -24,12 +24,13 @@
               <transition-group name="list" enter-active-class="animated bounceInUp" leave-active-class="animated bounceOutDown">
                 <li v-for="(order, index) in orders" :key="index" v-bind:class="{ alert: order.status }" transition="slide-y-reverse-transition">
                   <v-layout>
-                  <v-flex xs2>{{ $n(order.food[0].price) }} {{$t('orderlist.Currency')}} </v-flex>
-                  <v-flex xs2>{{ $d(new Date(order.orderDateTime), 'short', 'fa-IR') }}</v-flex>
-                  <v-flex xs3><span style="white-space: pre;">{{order.details}}</span></v-flex>
-                  <v-flex xs2>{{order.food[0].restaurant}}</v-flex>
-                  <v-flex xs3>{{order.food[0].name}}</v-flex>
                   <i v-if="!order.status" @click="removeOrder(order.id)"><v-icon>cancel</v-icon></i>
+                  <i v-if="order.status"><v-icon>offline_pin</v-icon></i>
+                  <v-flex xs3>{{order.food[0].name}}</v-flex>
+                  <v-flex xs2>{{order.food[0].restaurant}}</v-flex>
+                  <v-flex xs3><span style="white-space: pre;">{{order.details}}</span></v-flex>
+                  <v-flex xs2>{{ $d(new Date(order.orderDateTime), 'short', 'fa-IR') }}</v-flex>
+                  <v-flex xs2>{{ $n(order.food[0].price) }} {{$t('orderlist.Currency')}} </v-flex>
                   </v-layout>
                 </li>
               </transition-group>
