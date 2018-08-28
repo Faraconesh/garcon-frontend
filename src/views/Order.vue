@@ -123,7 +123,11 @@ export default {
   methods: {
     submitOrderMethod () {
       if (this.hasOrderList) {
-        this.$store.dispatch('submitOrder', {order: this.orders, date: this.date, details: this.details})
+        if (this.date) {
+          this.$store.dispatch('submitOrder', {order: this.orders, date: this.date, details: this.details})
+        } else {
+          this.$store.dispatch('submitOrder', {order: this.orders, date: new Date().toISOString().split('T')[0], details: this.details})
+        }
       }
     },
     removeFood (index) {

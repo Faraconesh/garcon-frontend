@@ -28,7 +28,7 @@
                   <i v-if="order.status"><v-icon>offline_pin</v-icon></i>
                   <v-flex xs3>{{order.food[0].name}}</v-flex>
                   <v-flex xs2>{{order.food[0].restaurant}}</v-flex>
-                  <v-flex xs3><span style="white-space: pre;">{{order.details}}</span></v-flex>
+                  <v-flex xs3><span style="white-space: pre-wrap;">{{order.details}}</span></v-flex>
                   <v-flex xs2>{{ $d(new Date(order.orderDateTime), 'short', 'fa-IR') }}</v-flex>
                   <v-flex xs2>{{ $n(order.food[0].price) }} {{$t('orderlist.Currency')}} </v-flex>
                   </v-layout>

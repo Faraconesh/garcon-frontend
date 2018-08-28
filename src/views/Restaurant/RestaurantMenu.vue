@@ -96,7 +96,7 @@
             <v-card-text v-show="shows[index]">
               <v-layout column>
                 <v-flex>
-                  <span style="white-space: pre;">{{food.details}}</span>
+                  <span style="white-space: pre-wrap;">{{food.details}}</span>
                 </v-flex>
               </v-layout>
             </v-card-text>
